@@ -6,11 +6,12 @@ import { PLANTS } from '../mock-plants';
   selector: 'app-top-list',
   templateUrl: './top-list.component.html',
   styleUrls: ['./top-list.component.css']
+
 })
 export class TopListComponent implements OnInit{
   plant: Plant = { id: 1, name: 'Sansevieria Trifasciata'};
   plants = PLANTS;
-  selectedPlant: Plant = { id: 0, name: ''};
+  selectedPlant!: Plant;
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -19,5 +20,4 @@ export class TopListComponent implements OnInit{
   onSelect(plant: Plant){
     this.selectedPlant = plant;
   }
-
 }

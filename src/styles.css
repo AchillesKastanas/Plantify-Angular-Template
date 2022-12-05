@@ -41,11 +41,9 @@ body, input[type="text"], button {
  }
  .plants li.selected {
   background-color: #CFD8DC;
-  color: white;
  }
  .plants li.selected:hover {
   background-color: #BBD8DC;
-  color: white;
  }
  .plants .badge {
   display: inline-block;
