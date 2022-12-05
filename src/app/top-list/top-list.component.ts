@@ -10,9 +10,14 @@ import { PLANTS } from '../mock-plants';
 export class TopListComponent implements OnInit{
   plant: Plant = { id: 1, name: 'Sansevieria Trifasciata'};
   plants = PLANTS;
+  selectedPlant: Plant = { id: 0, name: ''};
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
+  }
+
+  onSelect(plant: Plant){
+    this.selectedPlant = plant;
   }
 
 }

@@ -1,6 +1,16 @@
 <h2>Available Plants</h2>
 <ul class="plants">
-  <li *ngFor="let plant of plants">
+  <li *ngFor="let plant of plants" (click)="onSelect(plant)">
     <span class="badge">{{plant.id}}</span> {{plant.name}}
   </li>
 </ul>
+
+<h2>{{selectedPlant.name | uppercase}} Details</h2>
+<div>
+  <span>id: </span>{{selectedPlant.id}}
+</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedPlant.name" placeholder="null"/>
+  </label>
+</div>
