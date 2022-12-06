@@ -7,9 +7,10 @@ import { Plant } from '../Plant';
   styleUrls: ['./plant-details.component.css']
 })
 export class PlantDetailsComponent {
-plant: any;
+
+  @Input() plant!: Plant;
 
   ngOnInit(): void{
-    // @Input() plant: Plant;
+
   }
 }
