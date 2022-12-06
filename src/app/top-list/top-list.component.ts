@@ -9,7 +9,7 @@ import { PLANTS } from '../mock-plants';
 
 })
 export class TopListComponent implements OnInit{
-  plant: Plant = { id: 1, name: 'Sansevieria Trifasciata'};
+  // plant: Plant = { id: 1, name: 'Sansevieria Trifasciata'};
   plants = PLANTS;
   selectedPlant!: Plant;
 

@@ -1,10 +1,21 @@
 <h2>Available Plants</h2>
-<ul class="plants">
-  <li *ngFor="let plant of plants" [class.selected]="plant === selectedPlant" (click)="onSelect(plant)">
-    <span class="badge">{{plant.id}}</span>
-    {{plant.name}}
-  </li>
-</ul>
+<table>
+  <tr>
+    <td>
+      <ul class="plants">
+        <li *ngFor="let plant of plants" [class.selected]="plant === selectedPlant" (click)="onSelect(plant)">
+          <span class="badge">{{plant.id}}</span>
+          {{plant.name}}
+        </li>
+      </ul>
+    </td>
+    <td>
+      <app-plant-details [plant]="selectedPlant"></app-plant-details>
+    </td>
+  </tr>
+</table>
 
-<app-plant-details [plant]="selectedPlant"></app-plant-details>
+
+
+
 

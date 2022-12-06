@@ -1,11 +1,15 @@
 <div *ngIf="plant">
   <h2>{{plant.name | uppercase}} Details</h2>
-  <div>
+  <!-- <div>
     <span>id: </span>{{plant.id}}
-  </div>
+  </div> -->
   <div>
-    <label>name:
+    <label>Name:
       <input [(ngModel)]="plant.name" placeholder="null"/>
     </label>
+  </div>
+  <br>
+  <div>
+    <img src="{{plant.image}}" alt="Italian Trulli">
   </div>
 </div>
