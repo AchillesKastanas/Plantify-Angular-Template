@@ -24,6 +24,7 @@ img {
   border-style: solid;
   border-width: 1px;
   border-color: #426140;
+  box-shadow: 5px 5px 15px rgb(185, 185, 185);
 }
 
 /* HeroesComponent's private CSS styles */

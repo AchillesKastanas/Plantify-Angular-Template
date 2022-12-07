@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Plant } from '../Plant';
-import { PLANTS } from '../mock-plants';
+import { PlantService } from '../plant.service';
 
 @Component({
   selector: 'app-top-list',
@@ -10,14 +10,21 @@ import { PLANTS } from '../mock-plants';
 })
 export class TopListComponent implements OnInit{
   // plant: Plant = { id: 1, name: 'Sansevieria Trifasciata'};
-  plants = PLANTS;
+  plants!: Plant[];
   selectedPlant!: Plant;
 
+  constructor(private plantService: PlantService){}
+
   ngOnInit(): void {
+    this.getPlantsFromService();
     throw new Error('Method not implemented.');
   }
 
   onSelect(plant: Plant){
     this.selectedPlant = plant;
+  }
+
+  getPlantsFromService(): void{
+    this.plants = this.plantService.getPlants();
   }
 }
