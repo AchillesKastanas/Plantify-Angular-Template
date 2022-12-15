@@ -18,12 +18,6 @@ export class TopListComponent implements OnInit{
 
   ngOnInit(): void {
     this.getPlantsFromService();
-    throw new Error('Method not implemented.');
-  }
-
-  onSelect(plant: Plant){
-    this.selectedPlant = plant;
-    this.messagingService.add('TopListComponent: Selecte plant id=' + this.selectedPlant.id);
   }
 
   getPlantsFromService(): void{

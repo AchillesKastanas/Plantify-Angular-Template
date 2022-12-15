@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Plant } from '../Plant';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { PlantService } from '../plant.service';
 
 @Component({
   selector: 'app-plant-details',
@@ -10,7 +13,15 @@ export class PlantDetailsComponent {
 
   @Input() plant!: Plant;
 
-  ngOnInit(): void{
+  constructor(private route: ActivatedRoute, private plantService: PlantService, private location: Location) {}
 
+  ngOnInit(): void{
+    this.getPlant();
+  }
+
+  getPlant(): void {
+    const stringId = this.route.snapshot.paramMap.get('id');
+    const id = stringId? +stringId: 0;
+    this.plantService.getPlant(id).subscribe(plant => this.plant = plant);
   }
 }
