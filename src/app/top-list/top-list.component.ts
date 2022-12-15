@@ -25,6 +25,6 @@ export class TopListComponent implements OnInit{
   }
 
   getPlantsFromService(): void{
-    this.plants = this.plantService.getPlants();
+    this.plantService.getPlants().subscribe(plants => this.plants = plants);
   }
 }
