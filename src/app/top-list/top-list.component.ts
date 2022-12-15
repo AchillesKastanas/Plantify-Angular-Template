@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Plant } from '../Plant';
 import { PlantService } from '../plant.service';
+import { MessagingService } from '../messaging.service';
 
 @Component({
   selector: 'app-top-list',
@@ -13,7 +14,7 @@ export class TopListComponent implements OnInit{
   plants!: Plant[];
   selectedPlant!: Plant;
 
-  constructor(private plantService: PlantService){}
+  constructor(private plantService: PlantService, private messagingService: MessagingService){}
 
   ngOnInit(): void {
     this.getPlantsFromService();
@@ -22,6 +23,7 @@ export class TopListComponent implements OnInit{
 
   onSelect(plant: Plant){
     this.selectedPlant = plant;
+    this.messagingService.add('TopListComponent: Selecte plant id=' + this.selectedPlant.id);
   }
 
   getPlantsFromService(): void{

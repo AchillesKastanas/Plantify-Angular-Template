@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopListComponent } from './top-list/top-list.component';
 import { PlantDetailsComponent } from './plant-details/plant-details.component';
+import { MessagingComponent } from './messaging/messaging/messaging.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopListComponent,
-    PlantDetailsComponent
+    PlantDetailsComponent,
+    MessagingComponent
   ],
   imports: [
     BrowserModule,
