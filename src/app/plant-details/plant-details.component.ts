@@ -24,4 +24,12 @@ export class PlantDetailsComponent {
     const id = stringId? +stringId: 0;
     this.plantService.getPlant(id).subscribe(plant => this.plant = plant);
   }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  save(): void {
+    this.plantService.updatePlant(this.plant)
+    .subscribe(() => this.goBack()); }
 }

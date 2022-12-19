@@ -1,4 +1,7 @@
 <div *ngIf="plant">
+  <br>
+  <button (click)="goBack()">Go back</button>
+  <button (click)="save()">Save Changes</button>
   <h2>{{plant.name | uppercase}} Details</h2>
   <!-- <div>
     <span>id: </span>{{plant.id}}

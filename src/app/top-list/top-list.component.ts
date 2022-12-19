@@ -23,4 +23,16 @@ export class TopListComponent implements OnInit{
   getPlantsFromService(): void{
     this.plantService.getPlants().subscribe(plants => this.plants = plants);
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) return;
+    this.plantService.addPlant({ name } as Plant)
+      .subscribe((plant: Plant) => { this.plants.push(plant); });
+  }
+
+  delete(plant: Plant): void { this.plants =
+    this.plants.filter(h => h !== plant);
+    this.plantService.deletePlant(plant).subscribe();
+  }
 }

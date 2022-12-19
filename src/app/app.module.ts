@@ -8,6 +8,9 @@ import { TopListComponent } from './top-list/top-list.component';
 import { PlantDetailsComponent } from './plant-details/plant-details.component';
 import { MessagingComponent } from './messaging/messaging/messaging.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,13 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot( InMemoryDataService,
+      { dataEncapsulation: false } )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

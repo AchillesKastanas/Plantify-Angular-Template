@@ -41,7 +41,8 @@ img {
   background-color: #EEE;
   margin: 5%;
   padding: 5px 0;
-  height: 25px;
+  height: 55px;
+  width: 350px;
   border-radius: 4px;
  }
  .plants li:hover {
@@ -65,7 +66,19 @@ img {
   position: relative;
   left: -1px;
   top: -4px;
-  height: 1.8em;
+  height: 55px;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
  }
+
+button {
+  width: 100px;
+  height: 45px;
+  background: #426140;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+}
+

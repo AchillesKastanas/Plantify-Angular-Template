@@ -1,11 +1,33 @@
 <h2>Available Plants</h2>
 
+<div>
+  <label>Plant Name:
+    <input #plantName />
+  </label>
+  <button (click)="add(plantName.value); plantName.value=''">
+    Add
+  </button>
+  <br>
+
+</div>
+
 <ul class="plants">
   <li *ngFor="let plant of plants">
-    <a routerLink="/detail/{{plant.id}}}">
-      <span class="badge">{{plant.id}}</span>
-      {{plant.name}}
-    </a>
+    <table>
+      <tr>
+        <td>
+          <a routerLink="/details/{{plant.id}}">
+            <span class="badge">{{plant.id}}</span>
+            {{plant.name}}
+          </a>
+        </td>
+        <td width="20%">
+          <button class="delete" title="delete plant" (click)="delete(plant)">
+            Delete Plant
+          </button>
+        </td>
+      </tr>
+    </table>
   </li>
 </ul>
 
