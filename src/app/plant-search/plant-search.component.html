@@ -1,0 +1,12 @@
+<h4>
+  <label for="search-box"><a>Hero Search</a></label>
+</h4>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <ul class="plants">
+    <li *ngFor="let plant of plants$ | async" >
+      <a routerLink="/details/{{plant.id}}">
+        <span class="badge">{{plant.id}}</span>
+        {{plant.name}}
+      </a>
+    </li>
+  </ul>

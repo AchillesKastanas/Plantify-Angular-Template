@@ -59,7 +59,16 @@ export class PlantService {
       const id = typeof plant === 'number' ? plant : plant.id;
       const url = `${this.plantsUrl}/${id}`;
       return this.http.delete<Plant>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted plant id=${id}`)),
-      catchError(this.handleError<Plant>('deletePlant')) );
+        tap(_ => this.log(`deleted plant id=${id}`)),
+        catchError(this.handleError<Plant>('deletePlant')) );
+    }
+
+    searchPlants(term: string): Observable<Plant[]> {
+      if (!term.trim()) return of([]);
+
+      return this.http.get<Plant[]>(`${this.plantsUrl}/?name=${term}`).pipe(
+        tap(x => x.length ? this.log(`found plants matching "${term}"`) : this.log(`no plants matching "${term}"`)),
+        catchError(this.handleError<Plant[]>('searchPlants', []))
+      );
     }
 }
